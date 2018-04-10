@@ -200,7 +200,10 @@
                                                 {% endif %}
                                                 {% if step.exception is not null %}
                                                     <br>
-                                                    <p style="padding-left:2em ; color:gray">({{ step.exception }})</p>
+                                                    <p style="padding-left:2em ; color:gray">({{ step.exception.message }})</p>
+                                                    {% if step.exception.diffScreenshot %}
+                                                        <img src="assets/screenshots/{{ step.exception.diffScreenshot }}"/>
+                                                    {% endif %}
                                                 {% endif %}
                                                 {% if step.output is not null %}
                                                     <br>

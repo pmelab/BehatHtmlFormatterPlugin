@@ -602,7 +602,7 @@ class BehatHTMLFormatter implements Formatter {
                         if ($exception instanceof PendingException) {
                             $this->pendingSteps[] = $step;
                         } else {
-                            $step->setException($exception->getMessage());
+                            $step->setException($exception);
                             $this->failedSteps[] = $step;
                         }
                     } else {
